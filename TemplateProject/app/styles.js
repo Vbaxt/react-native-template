@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-const ralph = {
+const colors = {
   primaryColor: '#ed3e44',
   secondaryColor: '#29292c',
   backgroundColor: 'white',
@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: ralph.secondaryColor,
+    color: colors.secondaryColor,
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: ralph.backgroundColor,
+    backgroundColor: colors.backgroundColor,
   },
   welcome: {
     fontSize: 20,
@@ -37,5 +37,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export { ralph };
+export { colors };
 export default styles;
