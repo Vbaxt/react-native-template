@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import { Counter, Welcome } from './screens';
+import { Counter, Welcome, Settings } from './screens';
 import { colors } from './styles';
 
 const stackConfig = {
@@ -12,6 +12,11 @@ const stackConfig = {
       tintColor: colors.backgroundColor,
     },
   },
+};
+
+const modalStackConfig = {
+  ...stackConfig,
+  mode: 'modal',
 };
 
 const tabConfig = {
@@ -28,10 +33,23 @@ const CounterNavigator = StackNavigator({
   Counter: {screen: Counter},
 }, stackConfig);
 
-const AppNavigator = TabNavigator({
+const AppTabNavigator = TabNavigator({
   Welcome: {screen: WelcomeNavigator},
   Counter: {screen: CounterNavigator},
 }, tabConfig);
+
+
+const AppNavigator = StackNavigator({
+  App: {
+    screen: AppTabNavigator,
+    navigationOptions: {
+      // The AppTabNavigator controls showing it's own header, and thus we
+      // disable the one from this ModalAppNavigator
+      header: { visible: false },
+    },
+  },
+  Settings: { screen: Settings },
+}, modalStackConfig);
 
 export {
   AppNavigator,

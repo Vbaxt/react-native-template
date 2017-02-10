@@ -5,6 +5,7 @@ const colors = {
   primaryColor: '#ed3e44',
   secondaryColor: '#29292c',
   backgroundColor: 'white',
+  navButtonTextColor: 'white',
 };
 
 const styles = StyleSheet.create({

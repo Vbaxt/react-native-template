@@ -3,10 +3,17 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../styles';
 import * as counterActions  from '../redux/modules/counter';
+import NavButton from '../components/nav-button';
 
 class Counter extends Component {
   static navigationOptions = {
     title: 'Counter',
+    header: ({navigate}, defaultHeader) => ({
+      ...defaultHeader,
+      right: (
+        <NavButton title="Settings" onPress={() => navigate('Settings')} />
+      ),
+    }),
   };
 
   render() {
