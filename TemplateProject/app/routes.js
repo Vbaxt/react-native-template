@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import { Counter, Welcome, Settings } from './screens';
 import { colors } from './styles';
@@ -20,9 +21,17 @@ const modalStackConfig = {
 };
 
 const tabConfig = {
-  tabBarOptions: {
-    activeTintColor: colors.primaryColor,
-  },
+  tabBarOptions: Platform.select({
+    ios: {
+      activeTintColor: colors.primaryColor,
+    },
+    android: {
+      activeTintColor: colors.backgroundColor,
+      style: {
+        backgroundColor: colors.primaryColor,
+      },
+    },
+  }),
 };
 
 const WelcomeNavigator = StackNavigator({

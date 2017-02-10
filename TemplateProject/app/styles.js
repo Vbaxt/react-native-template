@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 const colors = {
   primaryColor: '#ed3e44',
   secondaryColor: '#29292c',
   backgroundColor: 'white',
-  navButtonTextColor: 'white',
+  navButtonTextColor: Platform.OS === 'android' ? '#29292c' : 'white',
 };
 
 const styles = StyleSheet.create({
