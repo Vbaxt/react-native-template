@@ -1,16 +1,20 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import { Counter, Welcome, Settings } from './screens';
+import {
+  Counter,
+  Settings,
+  Welcome,
+} from './screens';
 import { colors } from './styles';
 
 const stackConfig = {
   navigationOptions: {
     header: {
       style: {
-        backgroundColor: colors.primaryColor,
+        backgroundColor: colors.primary,
       },
-      tintColor: colors.backgroundColor,
+      tintColor: colors.background,
     },
   },
 };
@@ -23,12 +27,12 @@ const modalStackConfig = {
 const tabConfig = {
   tabBarOptions: Platform.select({
     ios: {
-      activeTintColor: colors.primaryColor,
+      activeTintColor: colors.primary,
     },
     android: {
-      activeTintColor: colors.backgroundColor,
+      activeTintColor: colors.background,
       style: {
-        backgroundColor: colors.primaryColor,
+        backgroundColor: colors.primary,
       },
     },
   }),

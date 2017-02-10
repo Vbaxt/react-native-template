@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import styles from '../styles';
+import NavButton from '../components/nav-button';
 
 class Welcome extends Component {
   static navigationOptions = {
     title: 'TemplateProject',
+    header: ({navigate}, defaultHeader) => ({
+      ...defaultHeader,
+      right: (
+        <NavButton title="Settings" onPress={() => navigate('Settings')} />
+      ),
+    }),
   };
 
   render() {

@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, Platform } from 'react-native';
 
 const colors = {
-  primaryColor: '#ed3e44',
-  secondaryColor: '#29292c',
-  backgroundColor: 'white',
-  navButtonTextColor: Platform.OS === 'android' ? '#29292c' : 'white',
+  primary: '#ed3e44',
+  secondary: '#29292c',
+  background: 'white',
+  navButtonText: Platform.OS === 'android' ? '#29292c' : 'white',
 };
 
 const styles = StyleSheet.create({
@@ -13,13 +13,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: colors.secondaryColor,
+    color: colors.secondary,
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.backgroundColor,
+    backgroundColor: colors.background,
   },
   welcome: {
     fontSize: 20,
