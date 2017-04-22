@@ -2,9 +2,21 @@ import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../styles';
+import { AppState } from '../redux/modules/index';
 import * as counterActions  from '../redux/modules/counter';
 
-class Counter extends Component {
+interface ConnectStateProps {
+  value: number,
+}
+
+interface ConnectDispatchProps {
+  increment: () => any,
+  decrement: () => any,
+}
+
+type Props = ConnectStateProps & ConnectDispatchProps
+
+class Counter extends Component<Props, {}> {
   static navigationOptions = {
     title: 'Counter',
   };
@@ -29,9 +41,11 @@ class Counter extends Component {
 };
 
 export default connect(
-  ({counter}) => counter,
-  {
+  ({counter}: AppState): ConnectStateProps => ({
+    ...counter
+  }),
+  (): ConnectDispatchProps => ({
     increment: counterActions.increment,
     decrement: counterActions.decrement,
-  }
+  }),
 )(Counter);

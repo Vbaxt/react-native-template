@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2015",
+    "jsx": "react",
+    "outDir": "build",
+    "rootDir": "app",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "sourceMap": false,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "moduleResolution": "node"
+  },
+  "filesGlob": [
+    "typings/index.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx"
+  ],
+  "exclude": [
+    "index.android.js",
+    "index.ios.js",
+    "jest-setup.js",
+    "build",
+    "node_modules",
+    "android",
+    "ios",
+    "__mocks__",
+    "__tests__"
+  ],
+  "compileOnSave": false
+}

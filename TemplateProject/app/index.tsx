@@ -4,7 +4,10 @@ import { Provider } from 'react-redux';
 import { App } from './components';
 import store from './redux/store';
 
-const TemplateProject = () => {
+// The `ComponentProvider` type is not properly configured to allow stateless
+// components to be returned. So we work around this by typing this as `any`.
+// https://github.com/DefinitelyTyped/DefinitelyTyped/blob/a7e97698706ada9de04ffe7b3322da625dc3994b/types/react-native/index.d.ts#L440
+const TemplateProject: any = () => {
   return (
     <Provider store={store}>
       <App />
