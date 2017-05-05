@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "es2015",
     "target": "es2015",
-    "jsx": "react",
+    "jsx": "react-native",
     "outDir": "build",
     "rootDir": "app",
     "allowSyntheticDefaultImports": true,
@@ -13,10 +13,10 @@
     "sourceMap": false,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": ["dom", "es2017"]
   },
   "filesGlob": [
-    "typings/index.d.ts",
     "app/**/*.ts",
     "app/**/*.tsx"
   ],

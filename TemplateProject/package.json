@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"tsc --watch\" \"node node_modules/react-native/local-cli/cli.js start\"",
-    "lint": "eslint .",
+    "lint": "eslint app",
     "test": "jest",
     "build": "tsc"
   },
@@ -35,16 +35,22 @@
     "react-test-renderer": "~15.4.2",
     "redux-mock-store": "^1.2.2",
     "remote-redux-devtools": "^0.5.7",
+    "ts-jest": "^19.0.14",
     "tslint": "^5.1.0",
     "typescript": "^2.2.2"
   },
   "jest": {
     "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(j|t)sx?$",
+    "testPathIgnorePatterns": ["/node_modules/", "/build"],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation|react-clone-referenced-element|expo|@expo/*|exponent|@exponent/*)"
     ],
-    "setupFiles": [
-      "./jest-setup.js"
-    ]
+    "setupFiles": ["./jest-setup.js"]
   }
 }
